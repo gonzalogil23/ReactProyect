@@ -6,6 +6,8 @@
   .list {
     list-style: none;
     text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
     &:link {
       text-decoration: none;
       color: rgb(230, 230, 230);
@@ -16,6 +18,7 @@
     }
     li {
       flex: auto;
+      margin: 0.5em;
     }
   }
 

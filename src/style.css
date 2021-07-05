@@ -7,6 +7,8 @@
 .nav .list {
   list-style: none;
   text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 .nav .list:link {
   text-decoration: none;
@@ -18,6 +20,7 @@
 }
 .nav .list li {
   flex: auto;
+  margin: 0.5em;
 }
 .nav .fas {
   color: #e6e6e6;
