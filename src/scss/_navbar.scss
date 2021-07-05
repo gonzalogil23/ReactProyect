@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(31, 31, 116);
+  color: rgb(230, 230, 230);
+  .list {
+    list-style: none;
+    text-decoration: none;
+    &:link {
+      text-decoration: none;
+      color: rgb(230, 230, 230);
+    }
+    &:visited {
+      text-decoration: none;
+      color: rgb(230, 230, 230);
+    }
+    li {
+      flex: auto;
+    }
+  }
+
+  .fas {
+    color: rgb(230, 230, 230);
+    margin: 0.5em auto;
+  }
+}

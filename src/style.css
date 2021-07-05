@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1f1f74;
+  color: #e6e6e6;
+}
+.nav .list {
+  list-style: none;
+  text-decoration: none;
+}
+.nav .list:link {
+  text-decoration: none;
+  color: #e6e6e6;
+}
+.nav .list:visited {
+  text-decoration: none;
+  color: #e6e6e6;
+}
+.nav .list li {
+  flex: auto;
+}
+.nav .fas {
+  color: #e6e6e6;
+  margin: 0.5em auto;
+}
+
+/*# sourceMappingURL=style.css.map */
