@@ -1,5 +1,6 @@
 import "./style.css";
 import NavBar from "./components/NavBar";
+import Home from "./components/pages/Home";
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
+      <section className="home">
+        <Home />
+      </section>
     </div>
   );
 }
