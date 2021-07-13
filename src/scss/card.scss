@@ -1,0 +1,11 @@
+.card {
+  width: 16rem;
+  form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    input {
+      width: 20%;
+    }
+  }
+}

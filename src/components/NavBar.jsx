@@ -1,5 +1,4 @@
 import react from "react";
-import CartWidget from './pages/CartWidget'
 
 const NavBar = () => {
   return (
@@ -21,7 +20,9 @@ const NavBar = () => {
         </ul>
       </div>
       <div>
-        < CartWidget/>
+      <a href="">
+          <i className="fas fa-shopping-cart fa-2x"></i>
+        </a>
       </div>
     </div>
   );

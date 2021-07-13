@@ -27,4 +27,16 @@
   margin: 0.5em auto;
 }
 
+.card {
+  width: 16rem;
+}
+.card form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card form input {
+  width: 20%;
+}
+
 /*# sourceMappingURL=style.css.map */

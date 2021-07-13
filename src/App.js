@@ -1,6 +1,7 @@
 import "./style.css";
 import NavBar from "./components/NavBar";
-import Home from "./components/pages/Home";
+import Home from "./components/Home";
+import ProductContainer from "./components/Product/ProductContainer";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       </header>
       <section className="home">
         <Home />
+      </section>
+      <section>
+        <ProductContainer />
       </section>
     </div>
   );
