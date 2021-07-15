@@ -1,7 +1,8 @@
 import "./style.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import ProductContainer from "./components/Product/ProductContainer";
+// import ProductContainer from "./components/Product/ProductContainer";
+import WineIndex from "./components/WineList/WineIndex";
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
       <section className="home">
         <Home />
       </section>
-      <section>
-        <ProductContainer />
+      <section className="container catálogo">
+        <WineIndex />
       </section>
     </div>
   );

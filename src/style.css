@@ -1,32 +1,3 @@
-.nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: #1f1f74;
-  color: #e6e6e6;
-}
-.nav .list {
-  list-style: none;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-evenly;
-}
-.nav .list:link {
-  text-decoration: none;
-  color: #e6e6e6;
-}
-.nav .list:visited {
-  text-decoration: none;
-  color: #e6e6e6;
-}
-.nav .list li {
-  flex: auto;
-  margin: 0.5em;
-}
-.nav .fas {
-  color: #e6e6e6;
-  margin: 0.5em auto;
-}
-
 .card {
   width: 16rem;
 }
@@ -37,6 +8,14 @@
 }
 .card form input {
   width: 20%;
+}
+
+.wineList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem auto;
 }
 
 /*# sourceMappingURL=style.css.map */
