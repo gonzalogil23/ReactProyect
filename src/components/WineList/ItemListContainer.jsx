@@ -1,9 +1,9 @@
 import React from 'react';
-import List from  './List';
+import ItemList from  './ItemList';
 import {useState, useEffect} from 'react';
-import { Wines } from './Wines';
+import { Wines } from './Item';
 
-function WineIndex() {
+function ItemListContainer() {
 
         const [wines, setWines] = useState([]);
       
@@ -13,9 +13,9 @@ function WineIndex() {
 
     return (
         <div className="wineList" > 
-            <List wines= { wines } />
+            <ItemList wines= { wines } />
         </div>
     )
 }
 
-export default WineIndex
+export default ItemListContainer

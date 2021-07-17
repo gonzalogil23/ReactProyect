@@ -2,7 +2,7 @@ import "./style.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 // import ProductContainer from "./components/Product/ProductContainer";
-import WineIndex from "./components/WineList/WineIndex";
+import ItemListContainer from "./components/WineList/ItemListContainer";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Home />
       </section>
       <section className="container catálogo">
-        <WineIndex />
+        <ItemListContainer />
       </section>
     </div>
   );
