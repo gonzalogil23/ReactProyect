@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["scss/card.scss","scss/_wineList.scss"],"names":[],"mappings":"AAAA;EACE;;AACA;EACE;EACA;EACA;;AACA;EACE;;;ACPN;EACE;EACA;EACA;EACA;EACA","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["scss/card.scss","scss/_wineList.scss","scss/_itemDetail.scss"],"names":[],"mappings":"AAAA;EACE;;AACA;EACE;EACA;EACA;;AACA;EACE;;AAGJ;EACE;;;ACXJ;EACE;EACA;EACA;EACA;EACA;;;ACLF;EACI;EACA;EACA","file":"style.css"}

@@ -9,6 +9,9 @@
 .card form input {
   width: 20%;
 }
+.card .img-fluid {
+  padding-top: 2em;
+}
 
 .wineList {
   display: flex;
@@ -16,6 +19,12 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 2rem auto;
+}
+
+.itemDetail {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25em;
 }
 
 /*# sourceMappingURL=style.css.map */
