@@ -1,22 +1,21 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import { Item } from "../ItemListContainer/Item";
+import { getItem } from "../../mock/mock";
 
-function ItemDetailContainer() {
-  const [items, setItems] = useState([]);
-
-  const getItems = async (res, reject) => {
-    setTimeout(() => {
-      res(ItemDetail);
-    }, 2000).then((res) => {
-      setItems(res);
-    });
-  };
-
+// recibe como prop a item
+function ItemDetailContainer({ item }) {
+  const [itemSelected, setItemSelected] = useState();
+  useEffect(() => {
+    const fetchItem = async () => {
+      // getItem recibe itemSelected.id como parametro
+      setItemSelected(await getItem(item.id));
+    };
+    fetchItem();
+  });
   return (
     <>
-      <ItemDetail />
+      <ItemDetail item={itemSelected} />
     </>
   );
 }

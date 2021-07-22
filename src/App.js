@@ -16,9 +16,6 @@ function App() {
       <section className="container catálogo">
         <ItemListContainer />
       </section>
-      {/* <section>
-        <ItemDetailContainer />
-      </section> */}
     </div>
   );
 }
