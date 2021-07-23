@@ -13,8 +13,11 @@ export const getMockedItems = () => {
     }, 2000);
   });
 };
+export const getItemByCategory = () => {
+  return data.find((item) => item.category);
+};
 
-const data = [
+export const data = [
   {
     id: 1,
     name: "Gaia",
@@ -23,6 +26,7 @@ const data = [
     price: 3700,
     img: "../../../img/GaiaMalbec.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Malbec",
   },
   {
     id: 2,
@@ -32,6 +36,7 @@ const data = [
     price: 5600,
     img: "../../../img/malbecRiccitelli.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Malbec",
   },
   {
     id: 3,
@@ -41,6 +46,7 @@ const data = [
     price: 7000,
     img: "../../../img/granEnemigo.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Cavernet Sauvignon",
   },
   {
     id: 4,
@@ -50,6 +56,7 @@ const data = [
     price: 8200,
     img: "../../../img/don-malbec.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Malbec",
   },
   {
     id: 5,
@@ -59,6 +66,7 @@ const data = [
     price: 2700,
     img: "../../../img/luigi-bosca-cs.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Cavernet Sauvignon",
   },
   {
     id: 6,
@@ -68,6 +76,7 @@ const data = [
     price: 5800,
     img: "../../../img/achavalFerrerMiradorMalbec.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Malbec",
   },
   {
     id: 7,
@@ -77,6 +86,7 @@ const data = [
     price: 3900,
     img: "../../../img/andelunaBlanco.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blanco",
   },
   {
     id: 8,
@@ -86,6 +96,7 @@ const data = [
     price: 4500,
     img: "../../../img/andeluna-blancdefranc-rose.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Rosé",
   },
   {
     id: 9,
@@ -95,6 +106,7 @@ const data = [
     price: 8200,
     img: "../../../img/angelica-zapata-chardonnay-alta.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blanco",
   },
   {
     id: 10,
@@ -104,6 +116,7 @@ const data = [
     price: 3400,
     img: "../../../img/cabernet-riccitelli.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Cavernet Sauvignon",
   },
   {
     id: 11,
@@ -113,6 +126,7 @@ const data = [
     price: 2900,
     img: "../../../img/GaiaRedBlend.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blend",
   },
   {
     id: 12,
@@ -122,6 +136,7 @@ const data = [
     price: 2200,
     img: "../../../img/luigi-bosca-rose.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Rosé",
   },
   {
     id: 13,
@@ -131,6 +146,7 @@ const data = [
     price: 4100,
     img: "../../../img/megBlend.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blend",
   },
   {
     id: 14,
@@ -140,6 +156,7 @@ const data = [
     price: 5600,
     img: "../../../img/nicolasCZ.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blend",
   },
   {
     id: 15,
@@ -149,6 +166,7 @@ const data = [
     price: 2500,
     img: "../../../img/Reserve-Chardonnay.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blanco",
   },
   {
     id: 16,
@@ -158,6 +176,7 @@ const data = [
     price: 2000,
     img: "../../../img/Sauvignon-BlancDM.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Blanco",
   },
   {
     id: 17,
@@ -167,6 +186,7 @@ const data = [
     price: 6200,
     img: "../../../img/rosex6.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Rosé",
   },
   {
     id: 18,
@@ -176,6 +196,7 @@ const data = [
     price: 18700,
     img: "../../../img/don-malbecx4.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Pack",
   },
   {
     id: 19,
@@ -185,6 +206,7 @@ const data = [
     price: 30000,
     img: "../../../img/gran-enemigox6.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Pack",
   },
   {
     id: 20,
@@ -194,6 +216,7 @@ const data = [
     price: 2400,
     img: "../../../img/rose-riccitelli.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Rosé",
   },
   {
     id: 21,
@@ -203,5 +226,6 @@ const data = [
     price: 3900,
     img: "../../../img/escorihuela-cs.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
+    category: "Cavernet Sauvignon",
   },
 ];

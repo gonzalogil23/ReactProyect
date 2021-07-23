@@ -1,12 +1,14 @@
 import React from "react";
 import CartForm from "../CartForm";
 import { useState, useEffect, useRef } from "react";
-import ItemList from "../ItemListContainer/ItemList";
+import { useParams } from "react-router-dom";
 
 function ItemDetail({ item }) {
   const [cart, setCart] = useState([]);
 
   const productAdded = useRef(true);
+
+  const { id } = useParams();
 
   const getProduct = (form, product) => {
     form.preventDefault();

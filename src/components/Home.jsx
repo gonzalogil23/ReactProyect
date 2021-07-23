@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import ItemListContainer from "./ItemListContainer/ItemListContainer";
+import { useParams } from "react-router-dom";
 
 function Home() {
-    return (
-        <div>
-            {/* <h2>Nuestros productos</h2> */}
-        </div>
-    )
+  return (
+    <div>
+      <ItemListContainer />
+    </div>
+  );
 }
 
 export default Home;
