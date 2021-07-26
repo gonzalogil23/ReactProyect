@@ -13,8 +13,21 @@ export const getMockedItems = () => {
     }, 2000);
   });
 };
-export const getItemByCategory = () => {
-  return data.find((item) => item.category);
+
+export const getItemByCategory = (category) => {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res(data.filter((item) => item.category === category));
+    }, 2000);
+  });
+};
+
+export const getItemDetail = (id) => {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res(data.find((item) => item.id === parseInt(id)));
+    }, 2000);
+  });
 };
 
 export const data = [
@@ -46,7 +59,7 @@ export const data = [
     price: 7000,
     img: "../../../img/granEnemigo.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "Cavernet Sauvignon",
+    category: "CavernetSauvignon",
   },
   {
     id: 4,
@@ -66,7 +79,7 @@ export const data = [
     price: 2700,
     img: "../../../img/luigi-bosca-cs.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "Cavernet Sauvignon",
+    category: "CavernetSauvignon",
   },
   {
     id: 6,
@@ -116,7 +129,7 @@ export const data = [
     price: 3400,
     img: "../../../img/cabernet-riccitelli.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "Cavernet Sauvignon",
+    category: "CavernetSauvignon",
   },
   {
     id: 11,
@@ -186,7 +199,7 @@ export const data = [
     price: 6200,
     img: "../../../img/rosex6.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "Rosé",
+    category: "Pack",
   },
   {
     id: 18,
@@ -226,6 +239,6 @@ export const data = [
     price: 3900,
     img: "../../../img/escorihuela-cs.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "Cavernet Sauvignon",
+    category: "CavernetSauvignon",
   },
 ];

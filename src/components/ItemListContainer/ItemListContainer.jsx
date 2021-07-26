@@ -9,17 +9,29 @@ import { useParams } from "react-router-dom";
 function ItemListContainer(props) {
   const [wines, setWines] = useState([]);
 
-  const { id } = useParams();
-  // const { id } = props.match.params;
+  const { categoryId } = useParams();
+
   //TODO : llamar al mock que devuelve async
+
   useEffect(() => {
     Item().then((res) => setWines(res));
   }, []);
 
   useEffect(() => {
-    if ({ id }) {
-    }
-  });
+    const getWinesByCategory = async () => {
+      if (categoryId != undefined) {
+        const winesFiltered = await getItemByCategory(categoryId);
+        setWines(winesFiltered);
+      }
+    };
+    getWinesByCategory();
+  }, [categoryId]);
+
+  // useEffect(() => {
+  //   if ({ id }) {
+  //     getItemByCategory()
+  //   }
+  // });
 
   // useEffect(() => {
   //   const getCategory = async () => {
@@ -31,6 +43,7 @@ function ItemListContainer(props) {
   return (
     <>
       <div className="wineList ">
+        {/* <h2>Categoria {id}</h2> */}
         <ItemList wines={wines} />
       </div>
     </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import CartForm from "../CartForm";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import { Link } from "react-router-dom";
 
 function ItemList({ wines = [] }) {
   const [itemSelected, setItemSelected] = useState({});
@@ -31,7 +32,7 @@ function ItemList({ wines = [] }) {
   return (
     <>
       {wines.length === 0 ? (
-        <div class="d-flex justify-content-center">
+        <div class="text-center">
           <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
@@ -43,14 +44,16 @@ function ItemList({ wines = [] }) {
               <div className="card rounded mb-3">
                 <div className="row g-0">
                   <div className=" col-md-4">
-                    <img
-                      src={wine.img}
-                      className="img-fluid rounded-start"
-                      alt=""
-                      onClick={() => setItemSelected(wine)}
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    />
+                    <Link to={`/item/${wine.id}`}>
+                      <img
+                        src={wine.img}
+                        className="img-fluid rounded-start"
+                        alt=""
+                        //   onClick={() => setItemSelected(wine)}
+                        // data-bs-toggle="modal"
+                        // data-bs-target="#exampleModal"
+                      />
+                    </Link>
                   </div>
                   <div className="col-md-8">
                     <div className="card-body">
@@ -71,7 +74,7 @@ function ItemList({ wines = [] }) {
           </>
         ))
       )}
-      {itemSelected && <ItemDetailContainer item={itemSelected} />}
+      {/* {itemSelected && <ItemDetailContainer item={itemSelected} />} */}
     </>
   );
 }

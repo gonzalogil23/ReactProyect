@@ -1,5 +1,6 @@
 import react from "react";
 import { Link, NavLink } from "react-router-dom";
+import { data } from "./../mock/mock";
 
 const NavBar = () => {
   return (
@@ -46,7 +47,7 @@ const NavBar = () => {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <NavLink
-                    to="/Categoria/Malbec"
+                    to={"/Categoria/Malbec"}
                     className="dropdown-item"
                     activeClassName="activeLink"
                   >
@@ -55,7 +56,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/Categoria/CavernetSauvignon"
+                    to={"/Categoria/CavernetSauvignon"}
                     className="dropdown-item"
                     activeClassName="activeLink"
                     a
@@ -67,7 +68,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/Categoria/Blends"
+                    to={"/Categoria/Blend"}
                     className="dropdown-item"
                     activeClassName="activeLink"
                     a
@@ -79,7 +80,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/Categoria/Blancos"
+                    to={"/Categoria/Blanco"}
                     className="dropdown-item"
                     activeClassName="activeLink"
                     a
@@ -91,7 +92,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/Categoria/Rosé"
+                    to={"/Categoria/Rosé"}
                     className="dropdown-item"
                     activeClassName="activeLink"
                     a
@@ -105,7 +106,7 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/Categoria/packs"
+                to={"/Categoria/Pack"}
                 activeClassName="activeLink"
                 className="nav-link"
               >
@@ -114,7 +115,7 @@ const NavBar = () => {
             </li>
           </ul>
           <span className="navbar-text">
-            <NavLink to="/Cart">
+            <NavLink to={"/Cart"}>
               <i className="fas fa-shopping-cart fa-2x"></i>
             </NavLink>
           </span>

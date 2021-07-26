@@ -194,6 +194,6 @@ export const Item = () => {
   return new Promise((res, reject) => {
     setTimeout(() => {
       res(data);
-    }, 3000);
+    }, 1000);
   });
 };
