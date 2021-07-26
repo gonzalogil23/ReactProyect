@@ -1,32 +1,31 @@
 import React from "react";
-import CartForm from "../CartForm";
-import { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import ItemCount from "../ItemCount";
+import { useState, useEffect } from "react";
 
 function ItemDetail({ item }) {
   const [cart, setCart] = useState([]);
-
-  const productAdded = useRef(true);
-
-  const getProduct = (form, product) => {
-    form.preventDefault();
+  const [productAdded, setProductAdded] = useState(false);
+  const getProduct = (event) => {
+    event.preventDefault();
 
     let itemAdded = {
-      name: product.name,
-      type: product.type,
-      price: product.price,
-      qty: form.target[1].value,
+      name: item.name,
+      type: item.type,
+      price: item.price,
+      qty: event.target[1].value,
     };
     setCart([...cart, itemAdded]);
+    alert("¡Producto añadido al carrito!");
+    setProductAdded(true);
   };
 
-  useEffect(() => {
-    if (productAdded.current) {
-      productAdded.current = false;
-    } else {
-      alert("¡Producto añadido al carrito!");
-    }
-  }, [cart]);
+  // useEffect(() => {
+  //   if (productAdded.current) {
+  //     productAdded.current = false;
+  //   } else {
+  //     alert("¡Producto añadido al carrito!");
+  //   }
+  // }, [cart]);
 
   return (
     <>
@@ -52,8 +51,7 @@ function ItemDetail({ item }) {
                 <small>{item.price}</small>
               </p>
               <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                {" "}
-                <CartForm addCart={getProduct} />
+                <ItemCount addCart={getProduct} productAdded={productAdded} />
               </div>
             </div>
           </div>

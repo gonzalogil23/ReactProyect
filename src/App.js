@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/Cart";
 // import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
@@ -18,10 +19,7 @@ function App() {
           component={ItemListContainer}
         />
         <Route exact path={"/item/:itemId"} component={ItemDetailContainer} />
-        {/* <Route>
-        <Cart/>
-      </Route>
-        */}
+        <Route exact path={"/Cart"} component={Cart} />
       </Switch>
     </BrowserRouter>
 

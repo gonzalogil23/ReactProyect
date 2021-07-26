@@ -1,34 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import CartForm from "../CartForm";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import { Link } from "react-router-dom";
 
 function ItemList({ wines = [] }) {
-  const [itemSelected, setItemSelected] = useState({});
-
-  const [cart, setCart] = useState([]);
-  const productAdded = useRef(true);
-
-  const getProduct = (form, product) => {
-    form.preventDefault();
-
-    let itemAdded = {
-      name: product.name,
-      type: product.type,
-      price: product.price,
-      qty: form.target[1].value,
-    };
-    setCart([...cart, itemAdded]);
-  };
-
-  useEffect(() => {
-    if (productAdded.current) {
-      productAdded.current = false;
-    } else {
-      alert("¡Producto añadido al carrito!");
-    }
-  }, [cart]);
-
   return (
     <>
       {wines.length === 0 ? (
@@ -63,9 +37,6 @@ function ItemList({ wines = [] }) {
                       <p class="card-text">
                         <small class="text-muted">$ {wine.price}</small>
                       </p>
-                    </div>{" "}
-                    <div>
-                      <CartForm addCart={getProduct} />
                     </div>
                   </div>
                 </div>
