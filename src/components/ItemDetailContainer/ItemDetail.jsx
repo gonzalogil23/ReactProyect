@@ -1,31 +1,41 @@
 import React from "react";
 import ItemCount from "../ItemCount";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function ItemDetail({ item }) {
   const [cart, setCart] = useState([]);
   const [productAdded, setProductAdded] = useState(false);
+
   const getProduct = (event) => {
     event.preventDefault();
 
-    let itemAdded = {
-      name: item.name,
-      type: item.type,
-      price: item.price,
-      qty: event.target[1].value,
-    };
-    setCart([...cart, itemAdded]);
+    // let itemAdded = {
+    //   name: item.name,
+    //   type: item.type,
+    //   price: item.price,
+    //   qty: event.target[1].value,
+    // };
+    // setCart([...cart, itemAdded]);
     alert("¡Producto añadido al carrito!");
     setProductAdded(true);
   };
 
-  // useEffect(() => {
-  //   if (productAdded.current) {
-  //     productAdded.current = false;
-  //   } else {
-  //     alert("¡Producto añadido al carrito!");
-  //   }
-  // }, [cart]);
+  const [qty, setQty] = useState(1);
+
+  const addQty = () => {
+    if (qty < 10) {
+      setQty(qty + 1);
+    } else {
+      alert("Máximo de Stock alcanzado");
+    }
+  };
+  const substractQty = () => {
+    if (qty > 1) {
+      setQty(qty - 1);
+    } else {
+      alert("El mínimo es 1");
+    }
+  };
 
   return (
     <>
@@ -51,42 +61,17 @@ function ItemDetail({ item }) {
                 <small>{item.price}</small>
               </p>
               <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                <ItemCount addCart={getProduct} productAdded={productAdded} />
+                <ItemCount
+                  addCart={getProduct}
+                  productAdded={productAdded}
+                  addQty={addQty}
+                  substractQty={substractQty}
+                  qty={qty}
+                />
               </div>
             </div>
           </div>
         </div>
-        // <div className="modal" tabindex="-1" id="exampleModal">
-        //   <div className="modal-dialog modal-dialog-centered">
-        //     <div className="modal-content">
-        //       <div className="modal-header">
-        //         <h4 className="modal-title">{item.name}</h4>
-        //         <button
-        //           type="button"
-        //           className="btn-close"
-        //           data-bs-dismiss="modal"
-        //           aria-label="Close"
-        //         ></button>
-        //       </div>
-        //       <div className="modal-body row">
-        //         <div className="col-md-4">
-        //           <img className="imgDetail" src={item.img} alt="" />
-        //         </div>
-        //         <div className="col-md-8">
-        //           <h5>{item.desc}</h5>
-        //           <p>{item.winery}</p>
-        //           <p>{item.type}</p>
-        //           <p>
-        //             <small>{item.price}</small>
-        //           </p>
-        //         </div>
-        //       </div>
-        //       <div className="modal-footer">
-
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
       )}
     </>
   );

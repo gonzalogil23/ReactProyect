@@ -1,6 +1,4 @@
-import react from "react";
 import { Link, NavLink } from "react-router-dom";
-import { data } from "./../mock/mock";
 
 const NavBar = () => {
   return (
