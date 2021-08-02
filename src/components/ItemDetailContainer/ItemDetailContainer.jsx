@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { getItemDetail } from "../../mock/mock";
+import ItemCount from "../ItemCount";
 
-// recibe como prop a item
 function ItemDetailContainer() {
   const { itemId } = useParams();
-
   const [itemSelected, setItemSelected] = useState();
 
   useEffect(() => {

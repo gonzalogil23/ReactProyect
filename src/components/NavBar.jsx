@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../Context";
+import { useContext } from "react";
 
 const NavBar = () => {
+  let { cartCount } = useContext(CartContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -115,6 +119,7 @@ const NavBar = () => {
           <span className="navbar-text">
             <NavLink to={"/Cart"}>
               <i className="fas fa-shopping-cart fa-2x"></i>
+              {cartCount}
             </NavLink>
           </span>
         </div>

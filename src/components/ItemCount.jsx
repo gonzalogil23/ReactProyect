@@ -5,12 +5,7 @@ function ItemCount(props) {
   return (
     <>
       {!props.productAdded ? (
-        <form
-          action=""
-          onSubmit={(data) => {
-            props.addCart(data, props);
-          }}
-        >
+        <div>
           <button
             type="button"
             className="rounded-start btn btn-outline-dark btn-sm"
@@ -20,7 +15,7 @@ function ItemCount(props) {
           >
             -
           </button>
-          <input type="number" disabled value={props.qty} />
+          <h5>{props.qty}</h5>
           <button
             type="button"
             className="rounded-end btn btn-outline-dark btn-sm"
@@ -30,10 +25,7 @@ function ItemCount(props) {
           >
             +
           </button>
-          <button type="submit" className="btn btn-primary">
-            Agregar
-          </button>
-        </form>
+        </div>
       ) : (
         <ShowButton />
       )}

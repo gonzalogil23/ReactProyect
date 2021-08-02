@@ -23,9 +23,6 @@ function ItemList({ wines = [] }) {
                         src={wine.img}
                         className="img-fluid rounded-start"
                         alt=""
-                        //   onClick={() => setItemSelected(wine)}
-                        // data-bs-toggle="modal"
-                        // data-bs-target="#exampleModal"
                       />
                     </Link>
                   </div>
@@ -45,7 +42,6 @@ function ItemList({ wines = [] }) {
           </>
         ))
       )}
-      {/* {itemSelected && <ItemDetailContainer item={itemSelected} />} */}
     </>
   );
 }

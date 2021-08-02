@@ -1,24 +1,11 @@
 import React from "react";
 import ItemCount from "../ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../Context";
 
 function ItemDetail({ item }) {
-  const [cart, setCart] = useState([]);
+  const { addToCart } = useContext(CartContext);
   const [productAdded, setProductAdded] = useState(false);
-
-  const getProduct = (event) => {
-    event.preventDefault();
-
-    // let itemAdded = {
-    //   name: item.name,
-    //   type: item.type,
-    //   price: item.price,
-    //   qty: event.target[1].value,
-    // };
-    // setCart([...cart, itemAdded]);
-    alert("¡Producto añadido al carrito!");
-    setProductAdded(true);
-  };
 
   const [qty, setQty] = useState(1);
 
@@ -62,12 +49,21 @@ function ItemDetail({ item }) {
               </p>
               <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                 <ItemCount
-                  addCart={getProduct}
                   productAdded={productAdded}
                   addQty={addQty}
                   substractQty={substractQty}
                   qty={qty}
                 />
+                <button
+                  type="click"
+                  className="btn btn-primary"
+                  onClick={() => {
+                    addToCart(item, qty);
+                    setProductAdded(true);
+                  }}
+                >
+                  Agregar
+                </button>
               </div>
             </div>
           </div>
