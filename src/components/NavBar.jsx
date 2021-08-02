@@ -3,7 +3,7 @@ import { CartContext } from "../Context";
 import { useContext } from "react";
 
 const NavBar = () => {
-  let { cartCount } = useContext(CartContext);
+  const { cartCount, cartItems } = useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
