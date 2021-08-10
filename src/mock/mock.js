@@ -59,7 +59,7 @@ export const data = [
     price: 7000,
     img: "../../../img/granEnemigo.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "CavernetSauvignon",
+    category: "CabernetSauvignon",
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ export const data = [
     price: 2700,
     img: "../../../img/luigi-bosca-cs.jpg",
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae",
-    category: "CavernetSauvignon",
+    category: "CabernetSauvignon",
   },
   {
     id: 6,

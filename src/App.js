@@ -5,38 +5,32 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart";
-import CartProvider from "./Context";
-// import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import CartProvider from "./Context/CartContext";
+import ItemProvider from "./Context/ItemContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <NavBar />
-        <Switch>
-          <Route exact path={"/"} component={Home} />
-          <Route
-            exact
-            path={"/Categoria/:categoryId"}
-            component={ItemListContainer}
-          />
-          <Route exact path={"/item/:itemId"} component={ItemDetailContainer} />
-          <Route exact path={"/Cart"} component={Cart} />
-        </Switch>
-      </CartProvider>
+      <ItemProvider>
+        <CartProvider>
+          <NavBar />
+          <Switch>
+            <Route exact path={"/"} component={Home} />
+            <Route
+              exact
+              path={"/Categoria/:categoryId"}
+              component={ItemListContainer}
+            />
+            <Route
+              exact
+              path={"/item/:itemId"}
+              component={ItemDetailContainer}
+            />
+            <Route exact path={"/Cart"} component={Cart} />
+          </Switch>
+        </CartProvider>
+      </ItemProvider>
     </BrowserRouter>
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <NavBar />
-    //   </header>
-    //   <section className="home">
-    //     <Home />
-    //   </section>
-    //   <section className="container catálogo">
-    //     <ItemListContainer />
-    //   </section>
-    // </div>
   );
 }
 

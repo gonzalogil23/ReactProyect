@@ -1,32 +1,36 @@
 import React from "react";
 import ItemList from "./ItemList";
-import { useState, useEffect } from "react";
-import { getMockedItems } from "../../mock/mock";
-import { getItemByCategory } from "../../mock/mock";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { ItemContext } from "../../Context/ItemContext";
 
 function ItemListContainer() {
-  const [wines, setWines] = useState([]);
-
+  const { wines, getAllItems, getItemByCategory } = useContext(ItemContext);
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const getAllItems = async () => {
-      const getItem = await getMockedItems();
-      setWines(getItem);
-    };
-    getAllItems();
-  }, []);
+    categoryId === undefined || categoryId === ""
+      ? getAllItems()
+      : getItemByCategory(categoryId);
+  }, [categoryId, getAllItems, getItemByCategory]);
 
-  useEffect(() => {
-    const getWinesByCategory = async () => {
-      if (categoryId !== undefined) {
-        const winesFiltered = await getItemByCategory(categoryId);
-        setWines(winesFiltered);
-      }
-    };
-    getWinesByCategory();
-  }, [categoryId]);
+  // useEffect(() => {
+  //   const getAllItems = async () => {
+  //     const getItem = await getMockedItems();
+  //     setWines(getItem);
+  //   };
+  //   getAllItems();
+  // }, []);
+
+  // useEffect(() => {
+  //   const getWinesByCategory = async () => {
+  //     if (categoryId !== undefined) {
+  //       const winesFiltered = await getItemByCategory(categoryId);
+  //       setWines(winesFiltered);
+  //     }
+  //   };
+  //   getWinesByCategory();
+  // }, [categoryId]);
 
   return (
     <>

@@ -1,9 +1,13 @@
 import React from "react";
 import ItemCount from "../ItemCount";
 import { useState, useContext } from "react";
-import { CartContext } from "../../Context";
+import { CartContext } from "../../Context/CartContext";
+import ShowButton from "../ShowButton";
+import { ItemContext } from "../../Context/ItemContext";
 
-function ItemDetail({ item }) {
+function ItemDetail() {
+  const { currentItem } = useContext(ItemContext);
+
   const { addToCart } = useContext(CartContext);
   const [productAdded, setProductAdded] = useState(false);
 
@@ -26,12 +30,12 @@ function ItemDetail({ item }) {
 
   return (
     <>
-      {item && (
+      {currentItem && (
         <div className="container col-xxl-8 px-4 py-5">
           <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div className="col-10 col-sm-8 col-lg-6">
               <img
-                src={item.img}
+                src={currentItem.img}
                 className="d-block mx-lg-auto img-fluid"
                 alt=""
                 width="700"
@@ -40,31 +44,39 @@ function ItemDetail({ item }) {
               />
             </div>
             <div className="col-lg-6">
-              <h2 className="display-5 fw-bold lh-1 mb-3">{item.name}</h2>
-              <p className="lead">{item.desc}</p>
-              <p className="">{item.winery}</p>
-              <p>{item.type}</p>
+              <h2 className="display-5 fw-bold lh-1 mb-3">
+                {currentItem.name}
+              </h2>
+              <p className="lead">{currentItem.desc}</p>
+              <p className="">{currentItem.winery}</p>
+              <p>{currentItem.type}</p>
               <p>
-                <small>{item.price}</small>
+                <small>{currentItem.price}</small>
               </p>
-              <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                <ItemCount
-                  productAdded={productAdded}
-                  addQty={addQty}
-                  substractQty={substractQty}
-                  qty={qty}
-                />
-                <button
-                  type="click"
-                  className="btn btn-primary"
-                  onClick={() => {
-                    addToCart(item, qty);
-                    setProductAdded(true);
-                  }}
-                >
-                  Agregar
-                </button>
-              </div>
+              <>
+                {!productAdded ? (
+                  <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <ItemCount
+                      productAdded={productAdded}
+                      addQty={addQty}
+                      substractQty={substractQty}
+                      qty={qty}
+                    />
+                    <button
+                      type="click"
+                      className="btn btn-primary"
+                      onClick={() => {
+                        addToCart(currentItem, qty);
+                        setProductAdded(true);
+                      }}
+                    >
+                      Agregar
+                    </button>
+                  </div>
+                ) : (
+                  <ShowButton />
+                )}
+              </>
             </div>
           </div>
         </div>

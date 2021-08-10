@@ -1,27 +1,25 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import { getItemDetail } from "../../mock/mock";
-import ItemCount from "../ItemCount";
+import { ItemContext } from "../../Context/ItemContext";
 
 function ItemDetailContainer() {
   const { itemId } = useParams();
-  const [itemSelected, setItemSelected] = useState();
+  const { getItemDetail } = useContext(ItemContext);
 
   useEffect(() => {
     const getItemByID = async () => {
       if (itemId !== undefined) {
-        const itemDetail = await getItemDetail(itemId);
-        setItemSelected(itemDetail);
+        getItemDetail(itemId);
       }
     };
     getItemByID();
-  }, [itemId]);
+  }, [itemId, getItemDetail]);
 
   return (
     <>
-      <ItemDetail item={itemSelected} />
+      <ItemDetail />
     </>
   );
 }

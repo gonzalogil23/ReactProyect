@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { CartContext } from "../Context";
+import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 
 const NavBar = () => {
@@ -63,9 +63,8 @@ const NavBar = () => {
                     activeClassName="activeLink"
                     a
                     className="dropdown-item"
-                    href="#"
                   >
-                    Carvernet Sauvignon
+                    Cabernet Sauvignon
                   </NavLink>
                 </li>
                 <li>
