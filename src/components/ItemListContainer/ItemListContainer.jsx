@@ -9,11 +9,14 @@ function ItemListContainer() {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    categoryId === undefined || categoryId === ""
-      ? getAllItems()
-      : getItemByCategory(categoryId);
-  }, [categoryId, getAllItems, getItemByCategory]);
+    getAllItems();
+  }, [getAllItems]);
 
+  useEffect(() => {
+    if (categoryId !== undefined) {
+      getItemByCategory(categoryId);
+    }
+  }, [categoryId]);
   // useEffect(() => {
   //   const getAllItems = async () => {
   //     const getItem = await getMockedItems();

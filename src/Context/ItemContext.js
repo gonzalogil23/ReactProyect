@@ -14,10 +14,10 @@ const ItemProvider = ({ children }) => {
 
   const getItemDetail = (id) => {
     let itemSelected = wines.find((item) => item.id === id);
-    console.log(wines, id);
     setCurrentItem(itemSelected);
   };
   const getItemByCategory = async (category) => {
+    debugger;
     let wineByCategory = await getByCategory(category);
     setWines(wineByCategory);
   };
