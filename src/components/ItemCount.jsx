@@ -3,7 +3,7 @@ import React from "react";
 function ItemCount(props) {
   return (
     <>
-      <div>
+      <div className="itemCount">
         <button
           type="button"
           className="rounded-start btn btn-outline-dark btn-sm"

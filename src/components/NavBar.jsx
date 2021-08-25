@@ -116,7 +116,7 @@ const NavBar = () => {
             </li>
           </ul>
           <span className="navbar-text">
-            <NavLink to={"/Cart"}>
+            <NavLink to={"/CartContainer"}>
               <i className="fas fa-shopping-cart fa-2x"></i>
               {cartCount}
             </NavLink>

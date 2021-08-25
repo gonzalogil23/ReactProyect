@@ -1,21 +1,37 @@
 import { dataBase } from "../firebase/firebase";
+import { getMockedItems, getItemByCategory } from "../mock/mock";
 
 export const getAllItems = async () => {
-  const firestore = dataBase();
-  const collection = firestore.collection("products");
-  const snapshot = await collection.get();
-  return snapshot.docs.map((doc) => {
-    return { ...doc.data(), id: doc.id };
-  });
+  try {
+    const firestore = dataBase();
+    const collection = firestore.collection("products");
+    const snapshot = await collection.get();
+    return snapshot.docs.map((doc) => {
+      return { ...doc.data(), id: doc.id };
+    });
+  } catch (e) {
+    if (e.message === "Quota exceeded.") {
+      return getMockedItems();
+    } else {
+      console.error(e);
+    }
+  }
 };
 
 export const getByCategory = async (category) => {
-  const db = dataBase().collection("products");
-  const categories = await db.where("category", "==", category).get();
-  return categories.docs.map((doc) => {
-    return { ...doc.data(), id: doc.id };
-  });
+  try {
+    const db = dataBase().collection("products");
+    const categories = await db.where("category", "==", category).get();
+    return categories.docs.map((doc) => {
+      return { ...doc.data(), id: doc.id };
+    });
+  } catch (e) {
+    if (e.message === "Quota exceeded.") {
+      return getItemByCategory(category);
+    }
+  }
 };
+
 // await db
 //   .collection("cards")
 //   .where("pack", ">=", invoice + "_")

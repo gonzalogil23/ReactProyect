@@ -9,14 +9,12 @@ function ItemListContainer() {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    getAllItems();
-  }, [getAllItems]);
-
-  useEffect(() => {
     if (categoryId !== undefined) {
       getItemByCategory(categoryId);
+    } else {
+      getAllItems();
     }
-  }, [categoryId]);
+  }, [categoryId, getItemByCategory, getAllItems]);
   // useEffect(() => {
   //   const getAllItems = async () => {
   //     const getItem = await getMockedItems();
@@ -37,7 +35,7 @@ function ItemListContainer() {
 
   return (
     <>
-      <div className="wineList ">
+      <div className="wineList container">
         <ItemList wines={wines} />
       </div>
     </>

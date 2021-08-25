@@ -1,5 +1,11 @@
+.navbar {
+  border-bottom: solid 3px;
+  border-image: linear-gradient(to right, #482866, black) 1;
+}
+
 .card {
   width: 16rem;
+  height: 12.5rem;
 }
 .card form {
   display: flex;
@@ -11,6 +17,7 @@
 }
 .card .img-fluid {
   padding-top: 2em;
+  min-height: 9.375rem;
 }
 
 .wineList {
@@ -30,6 +37,126 @@
 .imgDetail {
   width: 100%;
   height: auto;
+}
+
+.carousel-item {
+  height: 28rem;
+}
+.carousel-item p {
+  font-size: 1.5rem;
+}
+.carousel-item img {
+  position: relative;
+  bottom: 8rem;
+}
+
+.footerContainer {
+  background-color: #eddaff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.footerContainer .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footerContainer .footer ul {
+  list-style: none;
+  font-size: 14px;
+  text-align: start;
+  transition: all 0.4s ease;
+  margin-top: 1em;
+}
+.footerContainer .footer ul a {
+  text-decoration: none;
+}
+.footerContainer .footer ul li {
+  color: #03000e;
+}
+.footerContainer .footer ul li:link {
+  color: #03000e;
+  text-decoration: none;
+}
+.footerContainer .footer ul li:visited {
+  color: #03000e;
+  text-decoration: none;
+}
+.footerContainer .footer ul li:hover {
+  color: #261238;
+  font-weight: 500;
+}
+.footerContainer .footer p {
+  font-style: italic;
+  color: #03000e;
+}
+.footerContainer .footer .redes {
+  text-align: center;
+}
+.footerContainer .footer .redes i {
+  color: #03000e;
+  margin: auto 0.2em;
+}
+.footerContainer .footer .redes i:hover {
+  color: #261238;
+}
+.footerContainer .copyright {
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: -1px;
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+}
+.counter .agregar {
+  height: 2.05em;
+  margin: 0.5em;
+}
+
+.itemCount {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.itemCount h5 {
+  margin: 0.5em;
+}
+
+.purchaseForm {
+  width: 20%;
+}
+.purchaseForm .input {
+  display: flex;
+  flex-direction: column;
+}
+.purchaseForm button {
+  margin: 0.5em auto;
+}
+
+.cart {
+  margin: 3em auto;
+  padding: 2em;
+  width: 60%;
+  border-style: solid;
+  border-width: 5px;
+  border-image: linear-gradient(180deg, #482866, black) 1;
+}
+.cart .itemCart {
+  justify-content: space-around;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-shopping-cart {
+  color: linear-gradient(180deg, #482866, black) 1;
 }
 
 /*# sourceMappingURL=style.css.map */

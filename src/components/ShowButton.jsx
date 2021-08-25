@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ShowButton() {
   return (
     <>
-      <Link to={"/Cart"}>
+      <Link to={"/CartContainer"}>
         <button type="button" class="btn btn-outline-success">
           Finalizar compra.
         </button>

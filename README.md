@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +67,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+
+# Proyecto React.js
+
+**Simulador E-commerce**
+El proyecto está ideado para ser una vinoteca online.
+Esta hecho con React.js, donde trabajé con componentes funcionales y hooks.
+Para el estilo utilice un preprocesador de CSS (SCSS), ya que me pareció mas simple que editar cada componente en su respectivo archivo CSS.
+Para la manipulación de datos originalmente cree un archivo mock.js que simulaba una base de datos la cual contenia un array de objetos, donde cada objeto es un vino con sus distintas caraterísticas.
+Una vez instalado **Firebase**, se reemplazó el archivo mock.js por _Firestore_ y trabajé con la información de las colecciones y sus respectivos documentos a traves de llamadas la base de datos.
+Al empezar a trabajar con _Firestore_ me surgió el problema de que hay un limite de llamadas diarias, entonces si pasaba ese límite no podía modificar ni incluso ver los archivos para poder seguir trabajando. La solución mas simple que se me ocurrió para no pausar el trabajo fue poner un _condicional_ que indica si excedí el limite de llamadas, seguir trabajando con la información del archivo mock.js.
+_GIF Funcionamiento en la carpeta public._

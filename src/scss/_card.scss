@@ -1,0 +1,16 @@
+.card {
+  width: 16rem;
+  height: 12.5rem;
+  form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    input {
+      width: 20%;
+    }
+  }
+  .img-fluid {
+    padding-top: 2em;
+    min-height: 9.375rem;
+  }
+}

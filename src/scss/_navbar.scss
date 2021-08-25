@@ -27,3 +27,9 @@
 //     margin: 0.5em auto;
 //   }
 // }
+.navbar {
+    border-bottom: solid 3px;
+    border-image: linear-gradient( to right,
+    rgb(72, 40, 102),
+    rgb(0, 0, 0)) 1;
+}

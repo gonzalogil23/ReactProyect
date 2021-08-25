@@ -7,27 +7,15 @@ export const getItem = (id) => {
 };
 
 export const getMockedItems = () => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(data);
-    }, 2000);
-  });
+  return data;
 };
 
 export const getItemByCategory = (category) => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(data.filter((item) => item.category === category));
-    }, 2000);
-  });
+  return data.filter((item) => item.category === category);
 };
 
 export const getItemDetail = (id) => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(data.find((item) => item.id === parseInt(id)));
-    }, 2000);
-  });
+  return data.find((item) => item.id === parseInt(id));
 };
 
 export const data = [

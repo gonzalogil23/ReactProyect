@@ -1,10 +1,12 @@
 import React, { createContext, useState } from "react";
+import { createOrder } from "../service/cartService";
 
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [order, setOrder] = useState({});
 
   const addToCart = (item, qty) => {
     if (cartItems.some((producto) => producto.name === item.name)) {
@@ -31,9 +33,37 @@ const CartProvider = ({ children }) => {
     setCartCount((i) => i - itemToDelete.qty);
   };
 
+  const createNewOrder = async ({ name, email, phone, address, city }) => {
+    let total = 0;
+    cartItems.forEach((item) => {
+      total += item.price * item.qty;
+    });
+    const order = {
+      buyer: {
+        name,
+        email,
+        phone,
+        address,
+        city,
+      },
+      items: cartItems,
+      total,
+    };
+    const newOrder = await createOrder(order);
+    debugger;
+    setOrder(newOrder);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartCount, cartItems, addToCart, deleteItem }}
+      value={{
+        cartCount,
+        cartItems,
+        addToCart,
+        deleteItem,
+        createNewOrder,
+        order,
+      }}
     >
       {children}
     </CartContext.Provider>

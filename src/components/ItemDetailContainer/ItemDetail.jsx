@@ -7,7 +7,6 @@ import { ItemContext } from "../../Context/ItemContext";
 
 function ItemDetail() {
   const { currentItem } = useContext(ItemContext);
-
   const { addToCart } = useContext(CartContext);
   const [productAdded, setProductAdded] = useState(false);
 
@@ -55,7 +54,7 @@ function ItemDetail() {
               </p>
               <>
                 {!productAdded ? (
-                  <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <div className="counter">
                     <ItemCount
                       productAdded={productAdded}
                       addQty={addQty}
@@ -64,7 +63,7 @@ function ItemDetail() {
                     />
                     <button
                       type="click"
-                      className="btn btn-primary"
+                      className="btn btn-primary agregar"
                       onClick={() => {
                         addToCart(currentItem, qty);
                         setProductAdded(true);
